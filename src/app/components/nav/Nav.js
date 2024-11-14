@@ -11,6 +11,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import MobileNav from "./MobileNav";
 import styles from '../../style/Navbar.module.css';
 import TechSubNav from "./TechSubNav";
+import Link from "next/link";
 
 export default function Nav({select , page}){
     const theme = createTheme({
@@ -95,11 +96,11 @@ export default function Nav({select , page}){
                 >
                 <ContainerWrap>
                     <div className="dp-wrap align-cen logo-box-wrap">
-                        <a href="/">
+                        <Link href="/">
                             <div className="logo-box">
                                 <img src="/img/logo.svg" />
                             </div>
-                        </a>
+                        </Link>
                     </div>
                     <Mobile>
                         {['left'].map((anchor) => (
@@ -119,13 +120,13 @@ export default function Nav({select , page}){
                     <PC>
                         <ul className="menu-list">
                             <li>
-                                <a href="" className={select == "menu1" ? "select" : ""}>어드밴스 솔루션</a>
+                                <Link href="" className={select == "menu1" ? "select" : ""}>어드밴스 솔루션</Link>
                             </li>
                             <li>
-                                <a href="/technology" className={select == "menu2" ? "select" : ""}>기술 및 제품</a>
+                                <Link href="/technology" className={select == "menu2" ? "select" : ""}>기술 및 제품</Link>
                             </li>
                             <li>
-                                <a href="" className={select == "menu3" ? "select" : ""}>소식 및 자료</a>
+                                <Link href="" className={select == "menu3" ? "select" : ""}>소식 및 자료</Link>
                             </li>
                         </ul>
                     </PC>

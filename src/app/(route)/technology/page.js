@@ -8,6 +8,7 @@ import Nav from "@/app/components/nav/Nav";
 import ContainerWrap from "@/app/components/layout/ContainerWrap";
 import SubBanner from "@/app/components/common/SubBanner";
 import Footer from "@/app/components/footer/Footer";
+import Link from "next/link";
 
 export default function Technology() {
 
@@ -279,13 +280,13 @@ export default function Technology() {
                     </ul>
                     <div className="a-link-list">
                         <div className="a-link">
-                            <a href="#tech1">광원 수납(개폐) 기술</a>
+                            <Link href="#tech1">광원 수납(개폐) 기술</Link>
                         </div>
                         <div className="a-link">
-                            <a href="#tech2">원자외선 vs 자외선</a>
+                            <Link href="#tech2">원자외선 vs 자외선</Link>
                         </div>
                         <div className="a-link">
-                            <a href="#tech3">학계 논문</a>
+                            <Link href="#tech3">학계 논문</Link>
                         </div>
                     </div>
                     <div className="tech-box-wrap" id="tech1">
@@ -1017,11 +1018,11 @@ const TechnologySection3 = styled(Box)`
                 text-align: center;
             }
         }
-        .a-link:first-child{
+        .a-link:first-of-type{
             border-bottom-left-radius: 8px;
             border-top-left-radius: 8px;
         }
-        .a-link:last-child{
+        .a-link:last-of-type{
             border-bottom-right-radius: 8px;
             border-top-right-radius: 8px;
         }

@@ -6,10 +6,7 @@ import theme from "../../../app/style/theme";
 
 import Close from "@mui/icons-material/Close";
 
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
-
-
+import Link from "next/link";
 
 export default function MobileNav({select,open,close}){
     const theme = createTheme({
@@ -30,21 +27,21 @@ export default function MobileNav({select,open,close}){
                     <div className="close-btn">
                         <IconButton onClick={close}><Close /></IconButton>
                     </div>
-                    <a href="/" className={select == "menu1" ? "select" : ""}>
+                    <Link href="/" className={select == "menu1" ? "select" : ""}>
                         <StyledMenu>
                             <h1>어드밴스 솔루션</h1>
                         </StyledMenu>
-                    </a>
-                    <a href="/technology" className={select == "menu2" ? "select" : ""}>
+                    </Link>
+                    <Link href="/technology" className={select == "menu2" ? "select" : ""}>
                         <StyledMenu>
                             <h1>기술 및 제품</h1>
                         </StyledMenu>
-                    </a>
-                    <a href="/" className={select == "menu3" ? "select" : ""}>
+                    </Link>
+                    <Link href="/" className={select == "menu3" ? "select" : ""}>
                         <StyledMenu>
                             <h1>소식 및 자료</h1>
                         </StyledMenu>
-                    </a>
+                    </Link>
                 </NavWrap>
             </ThemeProvider>
         </> 
