@@ -101,7 +101,6 @@ export default function Nav({select , page}){
                                 <img src="/img/logo.svg" />
                             </div>
                         </Link>
-                        <div className="language"><h3>EN</h3></div>
                     </div>
                     <Mobile>
                         {['left'].map((anchor) => (
