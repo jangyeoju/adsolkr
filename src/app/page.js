@@ -48,7 +48,7 @@ export default function Home() {
               <ContainerWrap>
                 <h1 className="title">
                   바이러스와 미세먼지 걱정없는 세상<br/>
-                  <strong className="montserrat">Advance Solution</strong>이 만들겠습니다.
+                  <strong className="montserrat">Advance-Solution</strong>이 만들겠습니다.
                 </h1>
                 <ul className="service-list">
                   <li id="service1" className="service-box">
@@ -81,7 +81,7 @@ export default function Home() {
             <SolutionWrap>
               <ContainerWrap>
                 <h1 className="title montserrat">
-                  <strong className="montserrat">CLIBO</strong> by Advance Solution
+                  <strong className="montserrat">CLIBO</strong> by Advance-Solution
                 </h1>
                 <p>
                   대면적의 다중이용시설인 공공기관(국공립병원, 공항, 관공서), <br/>
@@ -93,7 +93,7 @@ export default function Home() {
                       <AddIcon/>
                       <h4>CLIBO</h4>
                       <p>
-                      by Advance Solution
+                      by Advance-Solution
                       </p>
                   </li>
                   <li>

@@ -29,7 +29,7 @@ export default function MobileNav({select,open,close}){
                     </div>
                     <Link href="/" className={select == "menu1" ? "select" : ""}>
                         <StyledMenu>
-                            <h1>어드밴스 솔루션</h1>
+                            <h1>어드밴스솔루션</h1>
                         </StyledMenu>
                     </Link>
                     <Link href="/technology" className={select == "menu2" ? "select" : ""}>

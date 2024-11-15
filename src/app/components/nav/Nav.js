@@ -120,7 +120,7 @@ export default function Nav({select , page}){
                     <PC>
                         <ul className="menu-list">
                             <li>
-                                <Link href="" className={select == "menu1" ? "select" : ""}>어드밴스 솔루션</Link>
+                                <Link href="" className={select == "menu1" ? "select" : ""}>어드밴스솔루션</Link>
                             </li>
                             <li>
                                 <Link href="/technology" className={select == "menu2" ? "select" : ""}>기술 및 제품</Link>
