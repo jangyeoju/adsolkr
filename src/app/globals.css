@@ -18,12 +18,18 @@
 
 font-face {
   font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  src: url('../app/style/fonts/Montserrat-VariableFont_wght.ttf') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+font-face {
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -172,3 +178,4 @@ input[type=number] {
   font-family: "Montserrat", serif;
   font-weight: bold;
 }
+

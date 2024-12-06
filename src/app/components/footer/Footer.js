@@ -32,7 +32,7 @@ export default function Footer({select}){
                             기업부설연구소 : 경기도 성남시 수정구 대왕판교로 815, 기업지원허브 판교창업존 780호<br/>
                             Tel : 070.8887.0625 / E-mail : adsol@adsol.kr
                             </p>
-                            <h5>© ADVANCE SOLUTION CO. LTD 2023</h5>
+                            <h5>© ADVANCE SOLUTION CO. LTD 2025</h5>
                         </div>
                     </div>
                 </ContainerWrap>
