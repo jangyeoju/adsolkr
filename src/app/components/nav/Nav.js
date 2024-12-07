@@ -15,7 +15,38 @@ import Link from "next/link";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-export default function Nav({select , page}){
+import PropTypes from 'prop-types';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+
+import Slide from '@mui/material/Slide';
+
+function HideOnScroll(props) {
+    const { children, window } = props;
+    // Note that you normally won't need to set the window ref as useScrollTrigger
+    // will default to window.
+    // This is only being set here because the demo is in an iframe.
+    const trigger = useScrollTrigger({
+      target: window ? window() : undefined,
+    });
+  
+    return (
+      <Slide appear={false} direction="down" in={!trigger}>
+        {children ?? <div />}
+      </Slide>
+    );
+  }
+  
+  HideOnScroll.propTypes = {
+    children: PropTypes.element,
+    /**
+     * Injected by the documentation to work in an iframe.
+     * You won't need it on your project.
+     */
+    window: PropTypes.func,
+  };
+
+
+export default function Nav({select , page,props}){
     const theme = createTheme({
         typography:{
           fontFamily : "Pretendard"
@@ -86,6 +117,8 @@ export default function Nav({select , page}){
         return () => window.removeEventListener('scroll', handleScroll);
     }, [prevScrollPos]);
 
+
+
       
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -117,12 +150,12 @@ export default function Nav({select , page}){
 
     return(
          <ThemeProvider theme={theme}>
-            <NavWrap 
-            >
+            <NavWrap>
+                <HideOnScroll {...props}>
                 <div 
                     className={styles.navbar}
                     style={{
-                           transform: visible ? 'translateY(0)' : 'translateY(-100%)',
+                        // transform: visible ? 'translateY(0)' : 'translateY(-100%)',
                         transition: 'transform 0.3s ease-in-out',
                         backgroundColor: `rgba(255, 255, 255, ${scrollProgress * 1})`,
                     }}
@@ -236,6 +269,7 @@ export default function Nav({select , page}){
                     <TechSubNav /> : <></>
                 }
                 </div>
+                </HideOnScroll>
             </NavWrap>
         </ThemeProvider>
     )
