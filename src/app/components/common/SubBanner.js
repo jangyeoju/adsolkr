@@ -25,7 +25,7 @@ const SubBannerWrap = styled(Box)`
     background-size: cover;
     background-position:center;
     background-repeat: no-repeat;
-    padding: 13rem 0 10rem 0;
+    padding: 10rem 0 10rem 0;
     h1{
         font-size: 5rem;
         margin-bottom: 2rem;
@@ -37,9 +37,9 @@ const SubBannerWrap = styled(Box)`
         font-weight: 400;
     }
     @media ${() => theme.device.mobile2} {
-        padding: 8rem 0 5rem 0;
+        padding: 5rem 0 5rem 0;
         h1{
-            font-size: 3.5rem;
+            font-size: 3rem;
         }
         p{
             font-size: 1.6rem;

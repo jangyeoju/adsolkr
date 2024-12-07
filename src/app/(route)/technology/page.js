@@ -397,6 +397,9 @@ export default function Technology() {
 const TechNavWrap = styled(Box)`
     position: relative;
     height: 150px;
+    @media ${() => theme.device.mobile} {
+        height: 130px;
+    }
 `;
 
 const TechnologyWrap = styled(Box)`
