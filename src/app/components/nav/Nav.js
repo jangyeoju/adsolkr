@@ -5,9 +5,6 @@ import {createTheme,Divider,Icon,ThemeProvider} from '@mui/material';
 import styled from "@emotion/styled";
 import theme from "../../../app/style/theme";
 import ContainerWrap from "../layout/ContainerWrap";
-import Close from "@mui/icons-material/Close";
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import MenuIcon from '@mui/icons-material/Menu';
 import MobileNav from "./MobileNav";
 import styles from '../../style/Navbar.module.css';
 import TechSubNav from "./TechSubNav";
@@ -170,19 +167,7 @@ export default function Nav({select , page,props}){
                         </Link>
                     </div>
                     <Mobile>
-                        {['left'].map((anchor) => (
-                            <React.Fragment key={anchor}>
-                            <Button className="icon-btn" onClick={handleDrawerOpen2}><MenuIcon/></Button>
-                            <SwipeableDrawer
-                                anchor={anchor}
-                                open={open2}
-                                onClose={toggleDrawer(anchor, false)}
-                                onOpen={toggleDrawer(anchor, true)}
-                            >
-                                {list(anchor)}
-                            </SwipeableDrawer>
-                            </React.Fragment>
-                        ))}
+                        <MobileNav select={select}/>
                     </Mobile>
                     <PC>
                         <ul className="menu-list">
