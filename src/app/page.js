@@ -151,10 +151,10 @@ export default function Home() {
 }
 
 const MainWrap = styled(Box )`
-  .montserrat{
+  /* .montserrat{
     font-family: "Montserrat", serif;
     font-weight: bold;
-  }
+  } */
   .title{
     font-size: 4rem;
     font-weight: bold;

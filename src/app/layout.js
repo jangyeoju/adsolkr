@@ -9,10 +9,17 @@ const pretendard = localFont({
   variable: '--font-pretendard',
 })
 
+const montserrat = localFont({
+  src: '../app/style/fonts/Montserrat-Bold.ttf',
+  display: 'swap',
+  weight: '700',
+  variable: '--font-montserrat',
+})
+
 
 export default function RootLayout({children}) {
   return (
-    <html lang="en" className={`${pretendard.variable} font-pretendard`}>
+    <html lang="en" className={`${pretendard.className} ${montserrat.className}`}>
       <body>
         {children}
       </body>

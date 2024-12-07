@@ -23,7 +23,7 @@
   font-style: normal;
 } */
 
-@font-face {
+/* @font-face {
   font-family: "Pretendard-Regular";
   src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
     format("woff");
@@ -44,15 +44,15 @@
   font-weight: 700;
   font-style: normal;
 }
-
-
+ */
+/* 
 @font-face {
   font-family: "Montserrat", serif;
   src: url('../app/style/fonts/Montserrat-Bold.ttf') format('woff');
   font-optical-sizing: auto;
   font-weight: bold;
   font-style: normal;
-}
+} */
 
 
 html {
