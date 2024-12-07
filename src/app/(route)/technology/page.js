@@ -9,7 +9,7 @@ import ContainerWrap from "@/app/components/layout/ContainerWrap";
 import SubBanner from "@/app/components/common/SubBanner";
 import Footer from "@/app/components/footer/Footer";
 import Link from "next/link";
-
+import TechSubNav from "@/app/components/nav/TechSubNav";
 export default function Technology() {
 
     const theme = createTheme({
@@ -26,7 +26,10 @@ export default function Technology() {
   return(
     <>
     <ThemeProvider theme={theme}>
-         <Nav select={"menu2"} page={"tech"}/>
+        <TechNavWrap>
+            <Nav select={"menu2"} page={"tech"}/>
+            <TechSubNav />
+        </TechNavWrap>
          <TechnologyWrap>
             <SubBannerWrap>
                 <SubBanner title={"Technology"}>
@@ -391,6 +394,11 @@ export default function Technology() {
 
 }
 
+const TechNavWrap = styled(Box)`
+    position: relative;
+    height: 150px;
+`;
+
 const TechnologyWrap = styled(Box)`
         .sub-title{
             font-size: 3.5rem;
@@ -503,7 +511,7 @@ const TechnologyWrap = styled(Box)`
 
 const SubBannerWrap = styled(Box)`
     position: relative;
-    margin-top: 100px;
+    /* margin-top: 100px; */
 `;
 
 

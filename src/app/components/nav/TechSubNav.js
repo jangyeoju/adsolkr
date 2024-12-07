@@ -27,8 +27,8 @@ export default function TechSubNav({id}){
 
 const SubNavWrap = styled(Box)`
     background-color: ${()=> theme.colors.primary};
-    position: fixed;
-    top: 98px;
+    position: sticky;
+    top: 110px;
     width: 100%;
     z-index: 11;
     display: flex;
