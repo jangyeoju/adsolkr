@@ -62,13 +62,19 @@ export default function Nav({select , page}){
 
       useEffect(() => {
         const handleScroll = () => {
-            // 현재 스크롤 위치
             const currentScrollPos = window.scrollY;
-            
+
+            // 페이지 최상단인지 확인
+            const isAtTop = currentScrollPos === 0;
+
             // 스크롤 방향 확인 (true = 위로 스크롤, false = 아래로 스크롤)
             const isVisible = prevScrollPos > currentScrollPos;
 
-            setVisible(isVisible);
+            // 최상단일 경우 visible 상태를 변경하지 않음
+            if (!isAtTop) {
+                setVisible(isVisible);
+            }
+
             setPrevScrollPos(currentScrollPos);
 
             // 기존의 배경색 투명도 효과도 유지
