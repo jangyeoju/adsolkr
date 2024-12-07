@@ -9,6 +9,9 @@ import ContainerWrap from "./components/layout/ContainerWrap";
 import FilledRoundBtn from "./components/button/FilledRoundBtn";
 import AddIcon from '@mui/icons-material/Add';
 import Footer from "./components/footer/Footer";
+import { useEffect, useRef, useState } from "react";
+import { createGlobalStyle } from "styled-components";
+
 export default function Home() {
 
   const theme = createTheme({
@@ -39,11 +42,21 @@ export default function Home() {
               <div className="scroll-down-wrap">
               </div>
             </div>
-            <ContainerWrap>
+            <ContainerWrap> 
               <div className="video-wrap">
-                <iframe width="100%" height="650" src="https://www.youtube.com/embed/23I7JE2Ps3Q?si=snRrSRIcv6AYobTW" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                <div className="video-box">
+                  <iframe 
+                    width="100%" 
+                    height="100%"
+                    src="https://www.youtube.com/embed/b1cXp8wySU8?autoplay=1&mute=1&controls=0" 
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerPolicy="strict-origin-when-cross-origin" 
+                    allowFullScreen
+                    />
+                </div>
               </div>
-            </ContainerWrap> 
+            </ContainerWrap>
             <ServiceBoxList>
               <ContainerWrap>
                 <h1 className="title">
@@ -150,7 +163,7 @@ const MainWrap = styled(Box )`
     text-align: center;
     line-break: anywhere;
     strong{
-      color: ${()=> theme.colors.primary};
+      color: ${()=> theme.colors.primary2};
       font-size: 4rem;
     }
   }
@@ -210,7 +223,28 @@ const MainWrap = styled(Box )`
     
   }
   .video-wrap{
-    padding: 8rem 0 13rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 13rem 0;
+    height: 100%;
+    width: 100%;
+    .video-box{
+      width: 100%;
+    height: 0;
+    padding-top: 56.25%; /* 가장 중요 */
+    position: relative;
+    }
+    iframe{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      border-radius: 20px;
+      top: 0;
+      left: 0;
+      border: none;
+    }
   }
 
   @media ${() => theme.device.tablet} {
@@ -268,16 +302,23 @@ const MainWrap = styled(Box )`
        }
      }
     .video-wrap{
-     padding: 5rem 0 8rem 0;
+     /* padding: 5rem 0 8rem 0; */
     }
    }
 `;
 
 const ServiceBoxList = styled(Box)`
-  background-color:${()=> theme.colors.backgroundColor};
+  background-image: url(../img/main/sub_background.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   padding: 13rem 0 11rem 0;
   h1{
     margin-bottom: 8rem;
+    color: #fff !important;
+    strong{
+      color: #fff !important;
+    }
   }
   .service-list{
     display: flex;
@@ -512,4 +553,22 @@ const SolutionWrap = styled(Box)`
       }
     }
   }
+`;
+
+const videoWrapStyles = `
+  .video-wrap {
+    transition: position 0.3s ease;
+  }
+  .video-wrap.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+  }
+`;
+
+const GlobalStyle = createGlobalStyle`
+  ${videoWrapStyles}
 `;

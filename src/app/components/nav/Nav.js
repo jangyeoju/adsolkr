@@ -12,6 +12,8 @@ import MobileNav from "./MobileNav";
 import styles from '../../style/Navbar.module.css';
 import TechSubNav from "./TechSubNav";
 import Link from "next/link";
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 export default function Nav({select , page}){
     const theme = createTheme({
@@ -36,8 +38,6 @@ export default function Nav({select , page}){
     
         setState({ ...state, [anchor]: open });
       };
-
-
       const [open2, setOpen2] = React.useState(false);
 
       const handleDrawerOpen2 = () => {
@@ -81,6 +81,34 @@ export default function Nav({select , page}){
     }, [prevScrollPos]);
 
       
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
+
+    const [anchorEl2, setAnchorEl2] = React.useState(null);
+    const open1 = Boolean(anchorEl2);
+    const handleClick2 = (event) => {
+      setAnchorEl2(event.currentTarget);
+    };
+    const handleClose2 = () => {
+      setAnchorEl2(null);
+    };
+
+    const [anchorEl3, setAnchorEl3] = React.useState(null);
+    const open3 = Boolean(anchorEl3);
+    const handleClick3 = (event) => {
+      setAnchorEl3(event.currentTarget);
+    };
+    const handleClose3 = () => {
+      setAnchorEl3(null);
+    };
+
+
     return(
          <ThemeProvider theme={theme}>
             <NavWrap 
@@ -120,13 +148,79 @@ export default function Nav({select , page}){
                     <PC>
                         <ul className="menu-list">
                             <li>
-                                <Link href="" className={select == "menu1" ? "select" : ""}>어드밴스솔루션</Link>
+                                {/* <Link href="" className={select == "menu1" ? "select" : ""}>어드밴스솔루션</Link> */}
+                                <Button
+                                    id="basic-button"
+                                    aria-controls={open ? 'basic-menu' : undefined}
+                                    aria-haspopup="true"
+                                    aria-expanded={open ? 'true' : undefined}
+                                    onClick={handleClick}
+                                >
+                                    어드밴스솔루션
+                                </Button>
+                                <StyledMenu
+                                    id="basic-menu"
+                                    anchorEl={anchorEl}
+                                    open={open}
+                                    onClose={handleClose}
+                                    MenuListProps={{
+                                    'aria-labelledby': 'basic-button',
+                                    }}
+                                >
+                                    <Link href="/vision"><MenuItem onClick={handleClose}>비전</MenuItem></Link>
+                                    <Link href="/current"><MenuItem onClick={handleClose}>현재</MenuItem></Link>
+                                    <Link href="/contact"><MenuItem onClick={handleClose}>문의하기 & 찾아오는 곳</MenuItem></Link>
+                                </StyledMenu>
                             </li>
                             <li>
-                                <Link href="/technology" className={select == "menu2" ? "select" : ""}>기술 및 제품</Link>
+                                {/* <Link href="/technology" className={select == "menu2" ? "select" : ""}>기술 및 제품</Link> */}
+                                <Button
+                                    id="basic-button"
+                                    aria-controls={open1 ? 'basic-menu' : undefined}
+                                    aria-haspopup="true"
+                                    aria-expanded={open1 ? 'true' : undefined}
+                                    onClick={handleClick2}
+                                >
+                                    기술 및 제품
+                                </Button>
+                                <StyledMenu
+                                    id="basic-menu"
+                                    anchorEl={anchorEl2}
+                                    open={open1}
+                                    onClose={handleClose2}
+                                    MenuListProps={{
+                                    'aria-labelledby': 'basic-button',
+                                    }}
+                                >
+                                    <Link href="/technology"><MenuItem onClick={handleClose2}>외함 기술 (AHS)</MenuItem></Link>
+                                    <Link href="/technology#sec2"><MenuItem onClick={handleClose2}>로봇 기술 (ARS)</MenuItem></Link>
+                                    <Link href="/technology#sec3"><MenuItem onClick={handleClose2}>광원 기술 (ASS)</MenuItem></Link>
+                                    <Link href="/clibo"><MenuItem onClick={handleClose2}>청정로봇 (CLIBO)</MenuItem></Link>
+                                </StyledMenu>
                             </li>
                             <li>
-                                <Link href="" className={select == "menu3" ? "select" : ""}>소식 및 자료</Link>
+                                {/* <Link href="" className={select == "menu3" ? "select" : ""}>소식 및 자료</Link> */}
+                                <Button
+                                    id="basic-button"
+                                    aria-controls={open3 ? 'basic-menu' : undefined}
+                                    aria-haspopup="true"
+                                    aria-expanded={open3 ? 'true' : undefined}
+                                    onClick={handleClick3}
+                                >
+                                  소식 및 자료
+                                </Button>
+                                <StyledMenu
+                                    id="basic-menu"
+                                    anchorEl={anchorEl3}
+                                    open={open3}
+                                    onClose={handleClose3}
+                                    MenuListProps={{
+                                    'aria-labelledby': 'basic-button',
+                                    }}
+                                >
+                                    <Link href="/news"><MenuItem onClick={handleClose3}>뉴스&자료</MenuItem></Link>
+                                </StyledMenu>
+                                
                             </li>
                         </ul>
                     </PC>
@@ -153,20 +247,22 @@ const NavWrap = styled(Box)`
             width: 180px;
         }
     }
+    .css-1tktgsa-MuiPaper-root-MuiPopover-paper-MuiMenu-paper{
+        box-shadow: none !important;
+    }
     .menu-list{
         display: flex;
         align-items: center;
         li{
             margin-right: 4rem;
-            a{
+            button{
                 font-size: 1.6rem;
                 color:  ${()=> theme.colors.textColor};
-                font-weight: 400;
+                font-weight: 500;
                 transition: all .3s ease-in-out;
             }
-            a:hover{
+            button:hover{
                 color: ${()=> theme.colors.primary};
-                font-weight: bold;
             }
             .select{
                 font-weight: bold;
@@ -209,3 +305,13 @@ const PC = styled(Box)`
   }
 `;
 
+
+const StyledMenu = styled(Menu)`
+        box-shadow: none;
+    .MuiMenu-list{
+        li{
+            font-size: 1.4rem;
+            color: ${()=> theme.colors.textColor};
+        }
+    }
+`;

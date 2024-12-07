@@ -27,7 +27,8 @@ const deviceSizes = {
 };
 
 const colors = {
-  primary: "#5D62FF",
+  primary: "#2B2B50",
+  primary2: "#5D62FF",
   secondary: "#1A1A40",
   textColor: "#22282F",
   textColor2: "#666F7A",

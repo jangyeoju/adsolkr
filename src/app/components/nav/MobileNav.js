@@ -8,6 +8,19 @@ import Close from "@mui/icons-material/Close";
 
 import Link from "next/link";
 
+import ListSubheader from '@mui/material/ListSubheader';
+import List from '@mui/material/List';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Collapse from '@mui/material/Collapse';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import DraftsIcon from '@mui/icons-material/Drafts';
+import SendIcon from '@mui/icons-material/Send';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import StarBorder from '@mui/icons-material/StarBorder';
+
 export default function MobileNav({select,open,close}){
     const theme = createTheme({
         typography:{
@@ -20,6 +33,27 @@ export default function MobileNav({select,open,close}){
           },
     })
 
+    const [listOpen, setOpen] = React.useState(false);
+
+    const handleClick = () => {
+        setOpen(!listOpen);
+    };
+
+
+    const [listOpen2, setOpen2] = React.useState(false);
+
+    const handleClick2 = () => {
+        setOpen2(!listOpen2);
+    };
+
+
+    const [listOpen3, setOpen3] = React.useState(false);
+
+    const handleClick3 = () => {
+        setOpen3(!listOpen3);
+    };
+
+
     return(
         <>
             <ThemeProvider theme={theme}>
@@ -27,21 +61,78 @@ export default function MobileNav({select,open,close}){
                     <div className="close-btn">
                         <IconButton onClick={close}><Close /></IconButton>
                     </div>
-                    <Link href="/" className={select == "menu1" ? "select" : ""}>
-                        <StyledMenu>
-                            <h1>어드밴스솔루션</h1>
-                        </StyledMenu>
-                    </Link>
-                    <Link href="/technology" className={select == "menu2" ? "select" : ""}>
-                        <StyledMenu>
-                            <h1>기술 및 제품</h1>
-                        </StyledMenu>
-                    </Link>
-                    <Link href="/" className={select == "menu3" ? "select" : ""}>
-                        <StyledMenu>
-                            <h1>소식 및 자료</h1>
-                        </StyledMenu>
-                    </Link>
+                    <StyledList
+                        component="nav"
+                        aria-labelledby="nested-list-subheader"
+                        >
+                        <ListItemButton onClick={handleClick}>
+                            <ListItemText primary="어드밴스솔루션" />
+                            {listOpen ? <ExpandLess /> : <ExpandMore />}
+                        </ListItemButton>
+                         <Collapse in={listOpen} timeout="auto" unmountOnExit>
+                            <List component="div" disablePadding>
+                                <Link href="/vision">
+                                    <StyledListItemButton sx={{ pl: 2 }}>
+                                        <ListItemText primary="비전" />
+                                    </StyledListItemButton>
+                                </Link>
+                                <Link href="/current">
+                                  <StyledListItemButton sx={{ pl: 2 }}>
+                                    <ListItemText primary="현재" />
+                                </StyledListItemButton>
+                                </Link>
+                                <Link href="/contact">
+                                  <StyledListItemButton sx={{ pl: 2 }}>
+                                    <ListItemText primary="문의하기 & 찾아오는 곳" />
+                                </StyledListItemButton>
+                                </Link>
+                            </List>
+                        </Collapse>
+
+                        <ListItemButton onClick={handleClick2}>
+                            <ListItemText primary="기술 및 제품" />
+                            {listOpen2 ? <ExpandLess /> : <ExpandMore />}
+                        </ListItemButton>
+                         <Collapse in={listOpen2} timeout="auto" unmountOnExit>
+                            <List component="div" disablePadding>
+                                <Link href="/technology">
+                                    <StyledListItemButton sx={{ pl: 2 }}>
+                                        <ListItemText primary="외함 기술 (AHS)" />
+                                    </StyledListItemButton>
+                                </Link>
+                                <Link href="/technology#sec2">
+                                    <StyledListItemButton sx={{ pl: 2 }}>
+                                        <ListItemText primary="로봇 기술 (ARS)" />
+                                    </StyledListItemButton>
+                                </Link>
+                                <Link href="/technology#sec3">
+                                    <StyledListItemButton sx={{ pl: 2 }}>
+                                        <ListItemText primary="광원 기술 (ASS)" />
+                                    </StyledListItemButton>
+                                </Link>
+                                <Link href="/clibo">
+                                    <StyledListItemButton sx={{ pl: 2 }}>
+                                        <ListItemText primary="청정로봇 (CLIBO)" />
+                                    </StyledListItemButton>
+                                </Link>
+                            </List>
+                        </Collapse>
+
+                        <ListItemButton onClick={handleClick3}>
+                            <ListItemText primary="소식 및 자료" />
+                            {listOpen3 ? <ExpandLess /> : <ExpandMore />}
+                        </ListItemButton>
+                         <Collapse in={listOpen3} timeout="auto" unmountOnExit>
+                            <List component="div" disablePadding>
+                                <Link href="/news">
+                                    <StyledListItemButton sx={{ pl: 2 }}>
+                                        <ListItemText primary="뉴스&자료" />
+                                    </StyledListItemButton>
+                                </Link>
+                            </List>
+                        </Collapse>
+
+                    </StyledList>
                 </NavWrap>
             </ThemeProvider>
         </> 
@@ -55,6 +146,9 @@ const NavWrap = styled(Box)`
     position: fixed;
     top: 0;
     left: 0;
+    nav{
+        border-bottom: none;
+    }
     .close-btn{
         padding: 1rem;
         display: flex;
@@ -85,24 +179,23 @@ const NavWrap = styled(Box)`
 `;
 
 
-const StyledMenu = styled(Box)`
-    padding: 2rem;
+const StyledList = styled(Box)`
     border-bottom: 1px solid rgba(255,255,255,.1);
-    display: flex;
-    align-items: center;
-    transition: all .3s ease-in-out;
-    h1{
+    span{
         font-size: 1.4rem;
         color: #fff;
         font-weight: 400;
         margin: 0;
     }
-    &:hover{
+    svg{
+        color: #fff;
+    }
+    /* &:hover{
         background-color: ${()=> theme.colors.primary};
         h1{
             color: #fff;
         }
-    }
+    } */
     @media ${() => theme.device.tablet} {
         h1{
             font-size: 1.4rem;
@@ -110,3 +203,7 @@ const StyledMenu = styled(Box)`
     }
 `;
 
+
+const StyledListItemButton = styled(ListItemButton)`
+    background-color: #252559;
+`;

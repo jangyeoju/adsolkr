@@ -599,7 +599,7 @@ const TechnologySection1 = styled(Box)`
                 font-weight: 600;
                 strong{
                     font-size: 4rem;
-                    color: ${()=> theme.colors.primary};
+                    color: ${()=> theme.colors.primary2};
                 }
             }
             img{
@@ -880,7 +880,7 @@ const TechnologySection2 = styled(Box)`
         }
     }
     .background-img-box{
-        background-color:${()=> theme.colors.backgroundColor};
+        background-color:${()=> theme.colors.backgroundColor2};
     }
     @media ${() => theme.device.tablet} {
         .technology-title-wrap{
@@ -984,7 +984,7 @@ const TechnologySection3 = styled(Box)`
                 font-weight: 600;
                 strong{
                     font-size: 4rem;
-                    color: ${()=> theme.colors.primary};
+                    color: ${()=> theme.colors.primary2};
                 }
             }
             img{
@@ -1135,7 +1135,7 @@ const TechnologySection3 = styled(Box)`
                 .rays-graph{
                     width: 60%;
                     img{
-                        box-shadow: 0 0 20px rgba(211,206,255,.3);
+                        box-shadow: 0 0 20px rgba(0,0,0,.1);
                         width: 100%;
                     }
                 }

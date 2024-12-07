@@ -9,7 +9,7 @@ export default function FilledRoundBtn({text, icon,handleClick}){
     const theme = createTheme({
         palette: {
             primary: {
-              main: "#5D62FF",
+              main: "#2B2B50",
             },
         },
     })
