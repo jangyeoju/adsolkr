@@ -146,6 +146,7 @@ const NavWrap = styled(Box)`
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 999;
     nav{
         border-bottom: none;
     }

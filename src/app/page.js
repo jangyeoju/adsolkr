@@ -302,7 +302,7 @@ const MainWrap = styled(Box )`
        }
      }
     .video-wrap{
-     /* padding: 5rem 0 8rem 0; */
+     padding: 5rem 0 8rem 0;
     }
    }
 `;
