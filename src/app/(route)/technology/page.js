@@ -28,7 +28,6 @@ export default function Technology() {
     <ThemeProvider theme={theme}>
         <TechNavWrap>
             <Nav select={"menu2"} page={"tech"}/>
-            <TechSubNav />
         </TechNavWrap>
          <TechnologyWrap>
             <SubBannerWrap>

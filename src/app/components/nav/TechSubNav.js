@@ -5,35 +5,34 @@ import styled from "@emotion/styled";
 import theme from "@/app/style/theme";
 import ContainerWrap from "../layout/ContainerWrap";
 
-export default function TechSubNav({id}){
+
+export default function TechSubNav({id,text1, text2, text3}){
     return(
         <SubNavWrap>
             <ContainerWrap>
-                  <ul className="sub-nav-wrap">
-                      <li>
-                          <a href="#sec1">외함 기술(AHS)</a>
-                      </li>
-                      <li>
-                          <a href="#sec2">로봇 기술 (ARS)</a>
-                      </li>
-                      <li>
-                          <a href="#sec3">광원 기술 (ASS)</a>
-                      </li>
-                  </ul>
-              </ContainerWrap>
+                <ul className="sub-nav-wrap">
+                    <li>
+                        <a href="#sec1">{text1}</a>
+                    </li>
+                    <li>
+                        <a href="#sec2">{text2}</a>
+                    </li>
+                    <li>
+                        <a href="#sec3">{text3}</a>
+                    </li>
+                </ul>
+            </ContainerWrap>
         </SubNavWrap>
     )
 }
 
 const SubNavWrap = styled(Box)`
     background-color: ${()=> theme.colors.primary};
-    position: sticky;
-    top: 110px;
-    width: 100%;
-    z-index: 11;
+
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top:2rem;
     .sub-nav-wrap{
         display: flex;
         align-items: center;

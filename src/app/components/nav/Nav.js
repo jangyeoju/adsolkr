@@ -152,6 +152,7 @@ export default function Nav({select , page,props}){
                 <div
                     className={styles.navbar}
                     style={{
+                        padding : "2rem 0 0 0",
                         transition: 'transform 0.3s ease-in-out',
                         backgroundColor: `rgba(255, 255, 255, ${scrollProgress * 1})`,
                     }}
@@ -242,18 +243,22 @@ export default function Nav({select , page,props}){
                                     >
                                         <Link href="/news"><MenuItem onClick={handleClose3}>뉴스&자료</MenuItem></Link>
                                     </StyledMenu>
-                                    
                                 </li>
                             </ul>
                         </PC>
                     </ContainerWrap>
+                {
+                    page == "tech" ?
+                    <TechSubNav text1={"외함 기술(AHS)"} text2={"로봇 기술 (ARS)"} text3={"광원 기술 (ASS)"}/>
+                    : <></>
+                }
+                 {
+                    page == "clibo" ?
+                    <TechSubNav text1={"CLIBO 구성"} text2={"CLIBO 청정 기능"} text3={"CLIBO 적용 기술"}/>
+                    : <></>
+                }
                 </div>
                 </HideOnScroll>
-                
-                {/* {
-                    page == "tech" ?
-                    <TechSubNav /> : <></>
-                } */}
             </NavWrap>
         </ThemeProvider>
     )
@@ -267,6 +272,9 @@ const NavWrap = styled(Box)`
     left: 0;
     right: 0;
     z-index: 1000;
+    .ptb-20{
+        padding: 20px 0;
+    }
     .logo-box{
         img{
             width: 180px;

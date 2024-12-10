@@ -111,7 +111,6 @@ export default function SwipeableTemporaryDrawer() {
             </Link>
         </List>
     </Collapse>
-
     <ListItemButton onClick={handleClick3}>
         <ListItemText primary="소식 및 자료" />
         {listOpen3 ? <ExpandLess /> : <ExpandMore />}

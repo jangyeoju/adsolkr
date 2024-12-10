@@ -36,5 +36,5 @@ const FilledButton = styled(Button)`
     }
     @media ${() => theme.device.tablet} {
         font-size: 1.4rem;
-     }
+    }
 `;
