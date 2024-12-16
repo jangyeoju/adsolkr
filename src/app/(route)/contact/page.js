@@ -13,7 +13,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import FaxIcon from '@mui/icons-material/Fax';
 
 import {Wrapper} from "@googlemaps/react-wrapper"
-import Map1 from "@/app/components/map/map";
+import Map1 from "@/app/components/map/Map1";
 import Map3 from "@/app/components/map/Map3";
 import Map2 from "@/app/components/map/Map2";
 
