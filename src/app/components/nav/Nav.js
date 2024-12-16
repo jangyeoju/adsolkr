@@ -191,7 +191,7 @@ export default function Nav({select , page,props}){
                                         }}
                                     >
                                         <Link href="/vision"><MenuItem onClick={handleClose}>비전</MenuItem></Link>
-                                        <Link href="/current"><MenuItem onClick={handleClose}>현재</MenuItem></Link>
+                                        <Link href="/now"><MenuItem onClick={handleClose}>현재</MenuItem></Link>
                                         <Link href="/contact"><MenuItem onClick={handleClose}>문의하기 & 찾아오는 곳</MenuItem></Link>
                                     </StyledMenu>
                                 </li>

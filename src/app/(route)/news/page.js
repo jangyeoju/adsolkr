@@ -118,7 +118,7 @@ const NavWrap = styled(Box)`
     position: relative;
     height: 100px;
     @media ${() => theme.device.mobile} {
-        height: 130px;
+        height: 80px;
     }
 `;
 

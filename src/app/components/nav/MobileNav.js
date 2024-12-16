@@ -70,7 +70,7 @@ export default function SwipeableTemporaryDrawer() {
                     <ListItemText primary="비전" />
                 </StyledListItemButton>
             </Link>
-            <Link href="/current">
+            <Link href="/now">
               <StyledListItemButton sx={{ pl: 2 }}>
                 <ListItemText primary="현재" />
             </StyledListItemButton>

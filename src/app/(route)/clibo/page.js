@@ -600,7 +600,7 @@ const ContentSection = styled(Box)`
                 border-radius: 16px;
                 padding: 3rem;  
                 background-color: #F8F8F8;
-                img:first-child:not(.dp-img-wrap img){
+                img:first-of-type:not(.dp-img-wrap img){
                     width: 100%;
                     height: 250px;
                     margin-bottom: 2rem;
@@ -665,7 +665,7 @@ const ContentSection = styled(Box)`
                 li{
                     width: 100%;
                     height: auto;
-                    img:first-child:not(.dp-img-wrap img){
+                    img:first-of-type:not(.dp-img-wrap img){
                         height: 180px;
                     }
                 }
