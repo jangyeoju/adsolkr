@@ -4,10 +4,10 @@ import styled from "@emotion/styled";
 import theme from "@/app/style/theme";
 import { Add } from "@mui/icons-material";
 
-export default function NewsBox({img, title}){
+export default function NewsBox({img, title,handle, edit}){
     return(
         <NewsBoxWrap>
-            <div className="news-box">
+            <div className="news-box"  onClick={handle}>
                 <div className="news-img">  
                     <div className="news-img-inner"></div>
                     <img src={img} alt={title} />
@@ -17,6 +17,15 @@ export default function NewsBox({img, title}){
                     <IconButton><Add/></IconButton>
                 </div>
             </div>
+            {
+                    edit ?
+                    <div className="btn-wrap">
+                        <Button variant="contained" color="primary" href="/news/admin/upload">수정</Button>
+                        <Button variant="contained" color="error">삭제</Button>
+                    </div>
+                    :
+                    <></>
+                }
         </NewsBoxWrap>
     )
 }
@@ -77,6 +86,24 @@ const NewsBoxWrap = styled(Box)`
             }
         }
     }   
+    .btn-wrap{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1rem;
+        margin-top: 1rem;
+        button{
+            font-size: 1.2rem;
+            font-weight: 400;
+            font-family: 'Pretendard-Bold';
+        }
+        a{
+            background-color: ${()=> theme.colors.primary2};
+            font-size: 1.2rem;
+            font-weight: 400;
+            font-family: 'Pretendard-Bold';
+        }
+    }
     @media ${() => theme.device.mobile} {
         width: 48%;
         .news-box{

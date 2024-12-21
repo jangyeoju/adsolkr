@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import theme from "../../style/theme";
 
-export default function FilledRoundBtn({text, icon,handleClick}){
+export default function FilledRoundBtn({text, icon,handleClick, link}){
     const theme = createTheme({
         palette: {
             primary: {
@@ -16,9 +16,9 @@ export default function FilledRoundBtn({text, icon,handleClick}){
     return(
         <>
             <ThemeProvider theme={theme}>
-                   <FilledButton variant="contained" onClick={handleClick}>
-                        {text}
-                    </FilledButton>
+            <FilledButton variant="contained" onClick={handleClick} href={link}>
+                 {text}
+             </FilledButton>
             </ThemeProvider>
         </>
     )

@@ -255,8 +255,7 @@ export default function Technology() {
                                 <div className="ars-text">
                                     <h3>04  자동스테이션 기술</h3>
                                     <h1>
-                                    필터 및 배터리 <br/>
-                                    자동 교체 스테이션 
+                                    필터 자동 교체 기술
                                     </h1>
                                 </div>
                             </div>
@@ -782,7 +781,7 @@ const TechnologySection1 = styled(Box)`
             .cost-box-wrap{
                 flex-direction: column;
                 .cost-box{
-                    width: 80%;
+                    width: 100%;
                     background-position : right;
                     height:20rem;
                     margin-bottom: 2rem;

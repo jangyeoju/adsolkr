@@ -257,7 +257,8 @@ export default function Clibo() {
                       <p>
                       물류센터<br/>
                       식품 공장육<br/>
-                      가공공장축사
+                      가공공장<br/>
+                      축사
                       </p>
                   </li>
                 </ul>
@@ -787,7 +788,7 @@ const SolutionWrap = styled(Box)`
 
   @media ${() => theme.device.mobile2} {
     p{
-      br{
+        br:not(.solution-list li p br){
         display: none;
       }
     }

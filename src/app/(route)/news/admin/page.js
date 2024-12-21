@@ -15,6 +15,8 @@ import Tab from '@mui/material/Tab';
 import NewsBox from "@/app/components/common/NewsBox";
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import BasicModal from "@/app/components/modal/BasicModal";
+import AddIcon from '@mui/icons-material/Add';
+
 function CustomTabPanel(props) {
     const { children, value, index, ...other } = props;
   
@@ -45,7 +47,6 @@ function CustomTabPanel(props) {
   }
 
 export default function Clibo() {
-
     const theme = createTheme({
       typography:{
         fontFamily : "Pretendard"
@@ -62,6 +63,7 @@ export default function Clibo() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
 
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {
@@ -153,7 +155,6 @@ export default function Clibo() {
       setOpen9(false);
     };
 
-
   return(
     <>
         <ThemeProvider theme={theme}>
@@ -169,6 +170,7 @@ export default function Clibo() {
                     </SubBanner>
                 </SubBannerWrap>
                 <ContainerWrap>
+                    <UploadButton variant="contained" color="primary" href="/news/admin/upload"><AddIcon/>게시물 올리기</UploadButton>
                     <TabBoxWrap sx={{ width: '100%' }}>
                         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                             <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
@@ -178,38 +180,40 @@ export default function Clibo() {
                             </Tabs>
                         </Box>
                         <StyledCustomTabPanel value={value} index={0}>
-                            <NewsBox img={"/img/news/news1.png"} title={"청정 서비스의 혁신"} handle={handleClickOpen} edit={false}/>
+                            <NewsBox img={"/img/news/news1.png"} title={"청정 서비스의 혁신"} handle={handleClickOpen} edit={true}/>
                             <BasicModal open={open} handleClose={handleClose} text={"청정 서비스의 혁신"} img={"/img/news/news1.png"}/>
 
-                            <NewsBox img={"/img/news/news2.png"} title={"2024 로보월드 참가"} handle={handleClickOpen2} edit={false}/>
+                            <NewsBox img={"/img/news/news2.png"} title={"2024 로보월드 참가"} handle={handleClickOpen2} edit={true}/>
                             <BasicModal open={open2} handleClose={handleClose2} text={"2024 로보월드 참가"} img={"/img/news/news2.png"}/>
 
-                            <NewsBox img={"/img/news/news3.png"} title={"한수원 선정"} handle={handleClickOpen3} edit={false}/>
+                            <NewsBox img={"/img/news/news3.png"} title={"한수원 선정"} handle={handleClickOpen3} edit={true}/>
                             <BasicModal open={open3} handleClose={handleClose3} text={"한수원 선정"} img={"/img/news/news3.png"}/>
 
-                            <NewsBox img={"/img/news/news4.png"} title={"창업경진대회 우수상"} handle={handleClickOpen4} edit={false}/>
+                            <NewsBox img={"/img/news/news4.png"} title={"창업경진대회 우수상"} handle={handleClickOpen4} edit={true}/>
                             <BasicModal open={open4} handleClose={handleClose4} text={"창업경진대회 우수상"} img={"/img/news/news4.png"}/>
 
-                            <NewsBox img={"/img/news/news5.png"} title={"중소벤처기업부장관 표창장"} handle={handleClickOpen5} edit={false}/>
+                            <NewsBox img={"/img/news/news5.png"} title={"중소벤처기업부장관 표창장"} handle={handleClickOpen5} edit={true}/>
                             <BasicModal open={open5} handleClose={handleClose5} text={"중소벤처기업부장관 표창장"} img={"/img/news/news5.png"}/>
 
-                            <NewsBox img={"/img/news/news6.png"} title={"2024 CES 참가"} handle={handleClickOpen6} edit={false}/>
+                            <NewsBox img={"/img/news/news6.png"} title={"2024 CES 참가"} handle={handleClickOpen6} edit={true}/>
                             <BasicModal open={open6} handleClose={handleClose6} text={"2024 CES 참가"} img={"/img/news/news6.png"}/>
                         </StyledCustomTabPanel>
                         <StyledCustomTabPanel value={value} index={1}>
-                            <NewsBox img={"/img/news/document1.png"} title={"2024 CLIBO 카다로그"} handle={handleClickOpen7} edit={false}/>
+                            <NewsBox img={"/img/news/document1.png"} title={"2024 CLIBO 카다로그"} handle={handleClickOpen7} edit={true}/>
                             <BasicModal open={open7} handleClose={handleClose7} text={"2024 CLIBO 카다로그"} img={"/img/news/document1.png"}/>
 
-                            <NewsBox img={"/img/news/document2.png"} title={"2022 AVS 카다로그"} handle={handleClickOpen8} edit={false}/>
+                            <NewsBox img={"/img/news/document2.png"} title={"2022 AVS 카다로그"} handle={handleClickOpen8} edit={true}/>
                             <BasicModal open={open8} handleClose={handleClose8} text={"2022 AVS 카다로그"} img={"/img/news/document2.png"}/>
                            
-                            <NewsBox img={"/img/news/document3.png"} title={"2021 AVS 카다로그"} handle={handleClickOpen9} edit={false}/>
+                            <NewsBox img={"/img/news/document3.png"} title={"2021 AVS 카다로그"} handle={handleClickOpen9} edit={true}/>
                             <BasicModal open={open9} handleClose={handleClose9} text={"2021 AVS 카다로그"} img={"/img/news/document3.png"}/>
                         </StyledCustomTabPanel>
                         <StyledCustomTabPanel value={value} index={2}>
                           <NoneBox>
                             <InsertDriveFileIcon/>
-                            <h3>자료가 없습니다.</h3>
+                            <h3>
+                                There are no data.
+                            </h3>
                           </NoneBox>
                         </StyledCustomTabPanel>
                     </TabBoxWrap>
@@ -294,4 +298,18 @@ const NoneBox = styled(Box)`
         margin-top: 1rem;
     }
     
+`;
+
+const UploadButton = styled(Button)`
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-family: 'Pretendard-Bold';
+    margin-top: 2rem;
+    width: 100%;
+    background-color: ${()=> theme.colors.primary2};
+    svg{
+        width: 24px;
+        height: 24px;
+        margin-right: 1rem;
+    }
 `;

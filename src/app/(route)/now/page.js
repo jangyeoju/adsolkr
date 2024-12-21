@@ -204,7 +204,7 @@ export default function Now() {
                                 <li>
                                     <img src="/img/now/premier/premier1.png" alt="priemier1"/>
                                     <h4>초격차 스타트업 1000 프로젝트 선정</h4>
-                                    <p>청최곡의 기술력을 증명하는 초격차 스타트업</p>
+                                    <p>최고의 기술력을 증명하는 초격차 스타트업</p>
                                 </li>
                                 <li>
                                     <img src="/img/now/premier/premier2.png" alt="priemier1"/>

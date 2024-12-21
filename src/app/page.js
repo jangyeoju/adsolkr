@@ -37,7 +37,7 @@ export default function Home() {
                     사람이 있는 곳에서 인체에 무해하게<br/>
                     공기 정화 및 접촉바이러스까지 살균합니다.
                   </p>
-                  <FilledRoundBtn text={"제품 보러가기"}/>
+                  <FilledRoundBtn text={"제품 보러가기"} link={"/clibo"} />
               </ContainerWrap>
               <div className="scroll-down-wrap">
               </div>
@@ -138,7 +138,8 @@ export default function Home() {
                       <p>
                       물류센터<br/>
                       식품 공장육<br/>
-                      가공공장축사
+                      가공공장<br/>
+                      축사
                       </p>
                   </li>
                 </ul>
@@ -534,7 +535,7 @@ const SolutionWrap = styled(Box)`
 
   @media ${() => theme.device.mobile2} {
     p{
-      br{
+      br:not(.solution-list li p br){
         display: none;
       }
     }
