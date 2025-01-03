@@ -17,7 +17,8 @@ import Slide from '@mui/material/Slide';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import PropTypes from 'prop-types';
 
-import theme from '../../../app/style/theme';
+import theme from '@/style/theme';
+
 import styles from '../../style/Navbar.module.css';
 import ContainerWrap from '../layout/ContainerWrap';
 import MobileNav from './MobileNav';

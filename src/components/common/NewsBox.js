@@ -1,62 +1,98 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import styled from '@emotion/styled';
 import { Add } from '@mui/icons-material';
+import { Box, IconButton } from '@mui/material';
+
 import {
-  Box,
-  Button,
-  Container,
-  createTheme,
-  Divider,
-  Icon,
-  IconButton,
-  ThemeProvider,
-} from '@mui/material';
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/Dialog';
+import { useArticlesContext } from '@/contexts/ArticlesContext';
+import theme from '@/style/theme';
 
-import theme from '@/app/style/theme';
+import { Button } from '../ui/Button';
 
-export default function NewsBox({ img, title, handle, edit }) {
+export default function NewsBox({ id, img, title, onClick, edit }) {
+  const { removeArticle } = useArticlesContext();
+
   return (
     <NewsBoxWrap>
-      <div className="news-box" onClick={handle}>
+      <label className="news-box" onClick={onClick}>
         <div className="news-img">
-          <div className="news-img-inner"></div>
-          <img src={img} alt={title} />
+          <Image
+            src={img}
+            alt={title}
+            fill
+            priority
+            sizes={300}
+            className="size-full object-cover"
+          />
         </div>
-        <div className="news-title">
-          <h3>{title}</h3>
+        <div className="news-title overflow-hidden">
+          <h3 className="truncate">{title}</h3>
           <IconButton>
             <Add />
           </IconButton>
         </div>
-      </div>
+      </label>
       {edit ? (
-        <div className="btn-wrap">
-          <Button variant="contained" color="primary" href="/news/admin/upload">
-            수정
-          </Button>
-          <Button variant="contained" color="error">
-            삭제
-          </Button>
+        <div className="flex justify-end gap-2">
+          <Link href={`/news/admin/upload/${id}`}>
+            <Button size="sm">수정</Button>
+          </Link>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="destructive" size="sm">
+                삭제
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>게시물을 삭제하시겠습니까?</DialogTitle>
+              </DialogHeader>
+              <DialogFooter>
+                <DialogClose asChild>
+                  <Button variant="secondary" size="sm">
+                    취소
+                  </Button>
+                </DialogClose>
+                <DialogClose asChild>
+                  <Button
+                    variant="destructive"
+                    size="sm"
+                    onClick={() => removeArticle(id)}
+                  >
+                    삭제
+                  </Button>
+                </DialogClose>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
         </div>
-      ) : (
-        <></>
-      )}
+      ) : null}
     </NewsBoxWrap>
   );
 }
 
 const NewsBoxWrap = styled(Box)`
-  width: 32%;
-  margin-bottom: 2rem;
   .news-box {
+    cursor: pointer;
+
     .news-img {
       border: 1px solid rgba(0, 0, 0, 0.1);
       width: 100%;
-      height: 200px;
       margin-bottom: 1.5rem;
       border-radius: 16px;
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease-in-out;
+      aspect-ratio: 3/2;
       img {
         width: 100%;
         height: 100%;
@@ -123,10 +159,8 @@ const NewsBoxWrap = styled(Box)`
     }
   }
   @media ${() => theme.device.mobile} {
-    width: 48%;
     .news-box {
       .news-img {
-        height: 130px;
         margin-bottom: 1rem;
       }
       .news-title {

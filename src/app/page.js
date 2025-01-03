@@ -16,11 +16,11 @@ import {
 } from '@mui/material';
 import { createGlobalStyle } from 'styled-components';
 
-import FilledRoundBtn from './components/button/FilledRoundBtn';
-import Footer from './components/footer/Footer';
-import ContainerWrap from './components/layout/ContainerWrap';
-import Nav from './components/nav/Nav';
-import theme from './style/theme';
+import FilledRoundBtn from '@/components/button/FilledRoundBtn';
+import Footer from '@/components/footer/Footer';
+import ContainerWrap from '@/components/layout/ContainerWrap';
+import Nav from '@/components/nav/Nav';
+import theme from '@/style/theme';
 
 export default function Home() {
   const theme = createTheme({

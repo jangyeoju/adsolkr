@@ -10,7 +10,7 @@ import {
   ThemeProvider,
 } from '@mui/material';
 
-import theme from '@/app/style/theme';
+import theme from '@/style/theme';
 
 export default function FileuploadInput({ multiple }) {
   return (

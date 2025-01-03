@@ -13,7 +13,7 @@ import {
   ThemeProvider,
 } from '@mui/material';
 
-import theme from '@/app/style/theme';
+import theme from '@/style/theme';
 
 import ContainerWrap from '../layout/ContainerWrap';
 

@@ -19,7 +19,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 
-import theme from '../../../app/style/theme';
+import theme from '@/style/theme';
 
 export default function SwipeableTemporaryDrawer() {
   const [state, setState] = React.useState({

@@ -14,12 +14,12 @@ import {
   ThemeProvider,
 } from '@mui/material';
 
-import SubBanner from '@/app/components/common/SubBanner';
-import Footer from '@/app/components/footer/Footer';
-import ContainerWrap from '@/app/components/layout/ContainerWrap';
-import Nav from '@/app/components/nav/Nav';
-import TechSubNav from '@/app/components/nav/TechSubNav';
-import theme from '@/app/style/theme';
+import SubBanner from '@/components/common/SubBanner';
+import Footer from '@/components/footer/Footer';
+import ContainerWrap from '@/components/layout/ContainerWrap';
+import Nav from '@/components/nav/Nav';
+import TechSubNav from '@/components/nav/TechSubNav';
+import theme from '@/style/theme';
 
 export default function Technology() {
   const theme = createTheme({
