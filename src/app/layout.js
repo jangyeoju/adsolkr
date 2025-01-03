@@ -3,7 +3,6 @@
 import './globals.css';
 
 import localFont from 'next/font/local';
-import Script from 'next/script';
 
 const pretendard = localFont({
   src: '../style/fonts/PretendardVariable.woff2',
@@ -30,8 +29,6 @@ export default function RootLayout({ children }) {
           <meta name="naver-site-verification" content="bc5dde5edbbb6eb963169a2a2b3cd633f3e383c6" />
         </head>
         <body>
-          <Script>
-          </Script>
           {children}
         </body>
       </html>
