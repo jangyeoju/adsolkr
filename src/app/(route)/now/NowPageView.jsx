@@ -209,7 +209,7 @@ export default function NowPageView({ awardImages }) {
             </ContainerWrap>
           </div>
         </InvestmentWrap>
-        <PremierWrap>
+        {/* <PremierWrap>
           <div className="priemier-wrap">
             <ContainerWrap>
               <h2 className="title">Awards and Certifications</h2>
@@ -298,7 +298,7 @@ export default function NowPageView({ awardImages }) {
               </ContainerWrap>
             </LogoWrap>
           </div>
-        </PremierWrap>
+        </PremierWrap> */}
         <PremierWrap>
           <div className="priemier-wrap">
             <ContainerWrap>
