@@ -212,6 +212,7 @@ export default function NowPageView({ awardImages }) {
         {/* <PremierWrap>
           <div className="priemier-wrap">
             <ContainerWrap>
+<<<<<<< Updated upstream
               <h2 className="title">Awards and Certifications</h2>
               <p className="sub-title-text">
                 Advance Solutions is a trusted company proven through awards and
@@ -302,6 +303,8 @@ export default function NowPageView({ awardImages }) {
         <PremierWrap>
           <div className="priemier-wrap">
             <ContainerWrap>
+=======
+>>>>>>> Stashed changes
               <h2 className="title">수상 및 인증</h2>
               <p className="sub-title-text">
                 어드밴스솔루션 수상 및 인증을 통해서 증명된 신뢰 있는
