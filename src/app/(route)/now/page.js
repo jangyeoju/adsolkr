@@ -2,6 +2,8 @@ import { createClient } from '@/lib/supabase/client';
 
 import NowPageView from './NowPageView';
 
+export const dynamic = 'force-dynamic';
+
 export default async function NowPage() {
   const supabase = await createClient();
 
