@@ -167,7 +167,7 @@ const ContactWrap = styled(Box)`
     color: ${() => theme.colors.textColor};
     line-height: 150%;
     text-align: center;
-    line-break: anywhere;
+    line-break: auto;
   }
   .sub-title-text {
     font-size: 2rem;

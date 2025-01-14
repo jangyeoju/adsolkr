@@ -175,7 +175,7 @@ const VisionWrap = styled(Box)`
     color: ${() => theme.colors.textColor};
     line-height: 150%;
     text-align: center;
-    line-break: anywhere;
+    line-break: auto;
   }
 
   @media ${() => theme.device.mobile} {

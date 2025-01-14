@@ -490,7 +490,7 @@ const TechnologyWrap = styled(Box)`
         height: auto;
         p {
           font-size: 1.4rem;
-          line-break: anywhere;
+          line-break: auto;
           br {
             display: none;
           }
@@ -586,7 +586,7 @@ const ModuleWrap = styled(Box)`
         font-size: 1.6rem;
         br {
           display: none;
-          line-break: anywhere;
+          line-break: auto;
         }
       }
       .product-img {
@@ -726,7 +726,13 @@ const TechnologySection1 = styled(Box)`
   @media ${() => theme.device.tablet} {
     .technology-title {
       padding: 8rem 0 8rem 0;
+      flex-direction: column;
+      align-items: flex-start;
       li {
+        width: 100%;
+        img {
+          display: none;
+        }
         h2 {
           font-size: 3.5rem;
           strong {
@@ -735,11 +741,14 @@ const TechnologySection1 = styled(Box)`
         }
         p {
           font-size: 1.6rem;
-          line-break: anywhere;
+          line-break: auto;
           br {
             display: none;
           }
         }
+      }
+      li:last-of-type {
+        margin-top: 2rem;
       }
     }
     .ahs-box-wrap {
@@ -910,7 +919,13 @@ const TechnologySection2 = styled(Box)`
       padding: 8rem 0 8rem 0;
     }
     .technology-title {
+      flex-direction: column;
+      align-items: flex-start;
       li {
+        width: 100%;
+        img {
+          display: none;
+        }
         h2 {
           font-size: 3.5rem;
           strong {
@@ -919,11 +934,14 @@ const TechnologySection2 = styled(Box)`
         }
         p {
           font-size: 1.6rem;
-          line-break: anywhere;
+          line-break: auto;
           br {
             display: none;
           }
         }
+      }
+      li:last-of-type {
+        margin-top: 2rem;
       }
     }
     .ars-img-box {
@@ -1204,7 +1222,13 @@ const TechnologySection3 = styled(Box)`
 
   @media ${() => theme.device.tablet} {
     .technology-title {
+      flex-direction: column;
+      align-items: flex-start;
       li {
+        width: 100%;
+        img {
+          display: none;
+        }
         h2 {
           font-size: 3.5rem;
           strong {
@@ -1213,11 +1237,14 @@ const TechnologySection3 = styled(Box)`
         }
         p {
           font-size: 1.6rem;
-          line-break: anywhere;
+          line-break: auto;
           br {
             display: none;
           }
         }
+      }
+      li:last-of-type {
+        margin-top: 2rem;
       }
     }
 

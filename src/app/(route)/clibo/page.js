@@ -500,9 +500,9 @@ const ProductWrap = styled(Box)`
   }
   @media ${() => theme.device.mobile3} {
     .sub-title {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       strong {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
       }
     }
     .sub-title-detail {
