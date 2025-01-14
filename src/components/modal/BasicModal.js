@@ -78,6 +78,7 @@ const StyledDialog = styled(Dialog)`
   }
   @media ${() => theme.device.mobile3} {
     .MuiPaper-root {
+      width: 100%;
       min-width: 100%;
       border-radius: 0 !important;
     }
