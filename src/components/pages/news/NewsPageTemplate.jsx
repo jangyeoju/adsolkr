@@ -73,7 +73,7 @@ export default function NewsPageTemplate({
         <NewsWrap>
           <SubBannerWrap>
             <SubBanner title={'News & Document'}>
-              <p>We bring you the latest news from Advance Solutions.</p>
+              <p>어드밴스솔루션의 소식을 전해드립니다.</p>
             </SubBanner>
           </SubBannerWrap>
 

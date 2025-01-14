@@ -1298,6 +1298,7 @@ const TechnologySection3 = styled(Box)`
     .tech-box-wrap {
       .tech-box {
         .tech-box-title {
+          height: 100px;
           h2 {
             font-size: 1.8rem;
           }
