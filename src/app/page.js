@@ -1,7 +1,5 @@
 'use client';
-
 import * as React from 'react';
-import { useEffect, useRef, useState } from 'react';
 import styled from '@emotion/styled';
 import AddIcon from '@mui/icons-material/Add';
 import {
@@ -646,3 +644,4 @@ const videoWrapStyles = `
 const GlobalStyle = createGlobalStyle`
   ${videoWrapStyles}
 `;
+

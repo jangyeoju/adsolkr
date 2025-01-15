@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 import './globals.css';
 
@@ -18,6 +18,16 @@ const montserrat = localFont({
   variable: '--font-montserrat',
 });
 
+export const metadata = {
+  title: '어드밴스솔루션',
+  description: '어드밴스솔루션 공식 홈페이지',
+  openGraph: {
+    title: '어드밴스솔루션',
+    description: '어드밴스솔루션 공식 홈페이지',
+    images: ['/path/to/image.jpg'],
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <>
@@ -35,3 +45,5 @@ export default function RootLayout({ children }) {
     </>
   );
 }
+
+
