@@ -24,7 +24,7 @@ export const metadata = {
   openGraph: {
     title: '어드밴스솔루션',
     description: '어드밴스솔루션 공식 홈페이지',
-    images: ['/path/to/image.jpg'],
+    images: ['/img/adsol.png'],
   },
 };
 
@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
         className={`${pretendard.className} ${montserrat.className}`}
       >
         <head>
-          <meta name="naver-site-verification" content="bc5dde5edbbb6eb963169a2a2b3cd633f3e383c6" />
+        <meta name="naver-site-verification" content="34b3af1889921e21080edccc5654bfbfe3a5b6e8" />
         </head>
         <body>
           {children}
